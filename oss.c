@@ -28,7 +28,7 @@ message m;
 
 int main()
 {
- 
+    //FILE *log = fopen("logfile", "w");
 
     srand(time(NULL));
     int size = sizeof(PCB) *18;
