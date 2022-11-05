@@ -70,6 +70,7 @@ int main(int argc, char*argv[])
     timeElapsed[1] = ossClock[1];
 
     srand(time(NULL));
+    int status =1;
         msgrcv(mID, &m, sizeof(m), pid, 0);
 
             
@@ -101,6 +102,7 @@ int main(int argc, char*argv[])
                 pTable[index].systemTime[1] = ossClock[1] + timeElapsed[1];
 
 			msgsnd( mID, &m, sizeof (m), 0 );
+			perror( "USER: Failure to send message." );
 
 		// Send message to OSS indicating that the process has finished reached its quantum or slice of quantum.
 		m.type = parPid;		
